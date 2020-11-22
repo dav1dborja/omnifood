@@ -217,6 +217,15 @@ header {
     width: auto;
 }
 
+.logo-black { 
+    display: none; 
+    float: left;
+    height: 50px;
+    margin: 5px 0;
+    width: auto;
+}
+
+/* Main navi */
 .main-nav {
     float: right;
     list-style: none;
@@ -232,10 +241,11 @@ header {
 .main-nav li a:visited {
     border-bottom: 2px solid transparent;
     color: #fff;
-    font-style: 90%;
+    font-size: 90%;
     padding: 8px 0;
     text-decoration: none;
     text-transform: uppercase;
+    -webkit-transition: border-bottom 0.2s;
     transition: border-bottom 0.2s;
 }
 
@@ -243,11 +253,34 @@ header {
 .main-nav li a:active {
     border-bottom: 2px solid #e67e22;
     color: #fff;
-    font-style: 90%;
+    font-size: 90%;
     padding: 8px 0;
     text-decoration: none;
     text-transform: uppercase;
 }
+
+/* Sticky navi */
+
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 2px #efefef;
+    z-index: 9999;
+}
+
+.sticky .main-nav { margin-top: 18px; }
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    color: #555;
+    padding: 16px 0;
+}
+
+.sticky .logo { display: none; }
+.sticky .logo-black { display: block; }
 
 /* --------------------------------------------------- */
 /* FEATURES */
@@ -330,7 +363,7 @@ header {
 .works-step div {
     color: #e67e22;
     border: 2px solid #e67e22;
-    display: inline-block;
+    display: inline-block; /* I think this line is unneeded */
     border-radius: 50%;
     height: 55px;
     width: 55px;
@@ -580,5 +613,28 @@ footer p {
     text-align: center;
     font-size: 90%;
     margin-top: 20px;
+}
+
+/* --------------------------------------------------- */
+/* Animations */
+/* --------------------------------------------------- */
+
+.js--wp-1,
+.js--wp-2,
+.js--wp-3 {
+    opacity: 0;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.js--wp-4 {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+.js--wp-1.animated,
+.js--wp-1.animated,
+.js--wp-1.animated {
+    opacity: 1;
 }
 
